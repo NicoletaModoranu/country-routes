@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(RouteController.class)
-public class RouteControllerTest {
+class RouteControllerTest {
 
     @MockBean
     private PathFinderService pathFinderService;

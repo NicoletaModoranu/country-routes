@@ -17,7 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ClientServiceTest {
+class ClientServiceTest {
 
 
     private ClientService clientService;
@@ -61,7 +61,7 @@ public class ClientServiceTest {
         } catch (Exception e) {
             //then
             assertTrue(e instanceof RouteException);
-            assertEquals(e.getMessage(), "Could not parse json data.");
+            assertEquals("Could not parse json data.", e.getMessage());
         }
     }
 
