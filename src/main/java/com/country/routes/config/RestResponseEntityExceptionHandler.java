@@ -21,13 +21,4 @@ public class RestResponseEntityExceptionHandler
         return handleExceptionInternal(ex, ex.getMessage(),
                 new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
-
-    @ExceptionHandler(value
-            = {IllegalArgumentException.class})
-    protected ResponseEntity<Object> handleIllegalArgException(
-            RuntimeException ex, WebRequest request) {
-
-        return handleExceptionInternal(ex, ex.getMessage(),
-                new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
-    }
 }

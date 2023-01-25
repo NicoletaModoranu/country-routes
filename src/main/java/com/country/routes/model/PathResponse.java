@@ -2,11 +2,11 @@ package com.country.routes.model;
 
 import java.util.List;
 
-public class Route {
+public class PathResponse {
 
     List<String> route;
 
-    public Route(List<String> route) {
+    public PathResponse(List<String> route) {
         this.route = route;
     }
 

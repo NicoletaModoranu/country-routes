@@ -6,6 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,8 +16,16 @@ import java.util.List;
 @Service
 public class ClientService {
 
+
+    RestTemplate restTemplate;
+
+    @Autowired
+    public ClientService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
     public List<Country> getCountries() {
-        RestTemplate restTemplate = new RestTemplate();
+
         String fooResourceUrl
                 = "https://raw.githubusercontent.com/mledoze/countries/master/countries.json";
         ResponseEntity<String> response
@@ -29,7 +38,7 @@ public class ClientService {
             countries = mapper.readValue(response.getBody(), new TypeReference<>() {
             });
         } catch (JsonProcessingException ex) {
-            throw new RouteException("Could not read json data.");
+            throw new RouteException("Could not parse json data.");
         }
         return countries;
     }
