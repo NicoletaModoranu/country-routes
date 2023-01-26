@@ -5,7 +5,7 @@ The application computes the shortest path between two countries.
 
 ## Run the app
 
-Prerequisite: _clone the application_
+Prerequisite: _clone the application, install an IDE_
 
 You can either use IntelliJ or Eclipse for this step. Build the application using Maven tool (clean install), then run.
 
