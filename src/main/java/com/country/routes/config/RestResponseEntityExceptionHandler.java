@@ -15,7 +15,7 @@ public class RestResponseEntityExceptionHandler
 
     @ExceptionHandler(value
             = {RouteException.class})
-    protected ResponseEntity<Object> handleValidationException(
+    protected ResponseEntity<Object> handleRouteException(
             RuntimeException ex, WebRequest request) {
 
         return handleExceptionInternal(ex, ex.getMessage(),
